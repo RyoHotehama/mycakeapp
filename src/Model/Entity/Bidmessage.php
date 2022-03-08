@@ -10,7 +10,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $bidinfo_id
- * @property int $user_ud
+ * @property int $user_id
  * @property string $message
  * @property \Cake\I18n\FrozenTime $created
  *
@@ -29,7 +29,7 @@ class Bidmessage extends Entity
      */
     protected $_accessible = [
         'bidinfo_id' => true,
-        'user_ud' => true,
+        'user_id' => true,
         'message' => true,
         'created' => true,
         'bidinfo' => true,

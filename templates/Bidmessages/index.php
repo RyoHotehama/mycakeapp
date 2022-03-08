@@ -13,7 +13,7 @@
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('bidinfo_id') ?></th>
-                    <th><?= $this->Paginator->sort('user_ud') ?></th>
+                    <th><?= $this->Paginator->sort('user_id') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
@@ -23,7 +23,7 @@
                 <tr>
                     <td><?= $this->Number->format($bidmessage->id) ?></td>
                     <td><?= $this->Number->format($bidmessage->bidinfo_id) ?></td>
-                    <td><?= $this->Number->format($bidmessage->user_ud) ?></td>
+                    <td><?= $this->Number->format($bidmessage->user_id) ?></td>
                     <td><?= h($bidmessage->created) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $bidmessage->id]) ?>

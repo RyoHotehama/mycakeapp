@@ -18,7 +18,7 @@
                 <legend><?= __('Add Bidmessage') ?></legend>
                 <?php
                     echo $this->Form->control('bidinfo_id');
-                    echo $this->Form->control('user_ud');
+                    echo $this->Form->control('user_id');
                     echo $this->Form->control('message');
                 ?>
             </fieldset>

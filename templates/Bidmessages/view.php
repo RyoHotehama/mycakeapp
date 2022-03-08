@@ -27,8 +27,8 @@
                     <td><?= $this->Number->format($bidmessage->bidinfo_id) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('User Ud') ?></th>
-                    <td><?= $this->Number->format($bidmessage->user_ud) ?></td>
+                    <th><?= __('User Id') ?></th>
+                    <td><?= $this->Number->format($bidmessage->user_id) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Created') ?></th>

@@ -47,8 +47,12 @@ class BidmessagesTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->belongsTo('Bidinfos', [
+        $this->belongsTo('Bidinfo', [
             'foreignKey' => 'bidinfo_id',
+            'joinType' => 'INNER',
+        ]);
+        $this->belongsTo('Users', [
+            'foreignKey' => 'user_id',
             'joinType' => 'INNER',
         ]);
     }
@@ -64,11 +68,6 @@ class BidmessagesTable extends Table
         $validator
             ->integer('id')
             ->allowEmptyString('id', null, 'create');
-
-        $validator
-            ->integer('user_ud')
-            ->requirePresence('user_ud', 'create')
-            ->notEmptyString('user_ud');
 
         $validator
             ->scalar('message')
@@ -87,7 +86,8 @@ class BidmessagesTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->existsIn('bidinfo_id', 'Bidinfos'), ['errorField' => 'bidinfo_id']);
+        $rules->add($rules->existsIn('bidinfo_id', 'Bidinfo'), ['errorField' => 'bidinfo_id']);
+        $rules->add($rules->existsIn('user_id', 'Users'), ['errorField' => 'user_id']);
 
         return $rules;
     }
