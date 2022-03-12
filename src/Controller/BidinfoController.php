@@ -9,7 +9,7 @@ namespace App\Controller;
  * @property \App\Model\Table\BidinfoTable $Bidinfo
  * @method \App\Model\Entity\Bidinfo[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class BidinfoController extends AppController
+class BidinfoController extends AuctionBaseController
 {
     /**
      * Index method

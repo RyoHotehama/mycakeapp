@@ -9,7 +9,7 @@ namespace App\Controller;
  * @property \App\Model\Table\BiditemsTable $Biditems
  * @method \App\Model\Entity\Biditem[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class BiditemsController extends AppController
+class BiditemsController extends AuctionBaseController
 {
     /**
      * Index method
