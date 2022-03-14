@@ -5,7 +5,8 @@ namespace APP\Controller;
 
 use APP\Controller\AppController;
 use Cake\Auth\DefaultPasswordHasher;
-use Cake\Event\Event;
+use Cake\Event\EventInterface;
+require_once("Appcontroller.php");　
 
 class AuctionBaseController extends AppController
 {

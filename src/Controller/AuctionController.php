@@ -4,8 +4,9 @@ declare(strict_types=1);
 namespace APP\Controller;
 
 use APP\Controller\AppController;
-use Cake\Event\Event;
+use Cake\Event\EventInterface;
 use Exception;
+require_once("AuctionBaseController.php");
 
 class AuctionController extends AuctionBaseController
 {
@@ -13,7 +14,7 @@ class AuctionController extends AuctionBaseController
     public $useTable = false;
 
     //初期化処理
-    public function initialize()
+    public function initialize():void
     {
         parent::initialize();
         $this -> loadComponent('Paginator');
@@ -90,7 +91,7 @@ class AuctionController extends AuctionBaseController
         //POST送信時の処理
         if ($this -> request -> is('post')) {
             //$biditemにフォームの送信内容を反映
-            $biditem = -> $this -> Biditems -> patchEntity($biditem, $this -> request -> getData());
+            $biditem = $this -> Biditems -> patchEntity($biditem, $this -> request -> getData());
             //biditemを保存する
             if ($this -> Biditems -> save($biditem)) {
                 //成功時のメッセージ
@@ -150,8 +151,7 @@ class AuctionController extends AuctionBaseController
             }
         }
 
-        try　
-        { //$bidinfo_idからBidinfoを取得する
+        try { //$bidinfo_idからBidinfoを取得する
             $bidinfo = $this -> Bidinfo -> get($bidinfo_id, ['contain' => ['Biditems']]);
         } catch (Exception $e) {
             $bidinfo = null;
