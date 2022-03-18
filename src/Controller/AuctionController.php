@@ -87,7 +87,7 @@ class AuctionController extends AuctionBaseController
     public function add()
     {
         //Biditemインスタンスを用意
-        $biditem = $this -> Biditems -> newEntity();
+        $biditem = $this -> Biditems -> newEmptyEntity();
         //POST送信時の処理
         if ($this -> request -> is('post')) {
             //$biditemにフォームの送信内容を反映
@@ -137,7 +137,7 @@ class AuctionController extends AuctionBaseController
     public function msg($bidinfo = null)
     {
         //Bidmessageを新たに用意
-        $bidmsg = $this -> Bidmessages -> newEntity();
+        $bidmsg = $this -> Bidmessages -> newEmptyEntity();
         //POST送信時の処理
         if ($this -> request -> is('post')) {
             //送信されたフォームで$bidmsgを更新
